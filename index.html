@@ -23,8 +23,31 @@
         .section-title::before { content: ""; display: inline-block; width: 4px; height: 18px; background: var(--primary-orange); margin-right: 8px; }
 
         .jobs-list { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .job-item { padding: 10px 0; border-bottom: 1px dashed #ddd; display: flex; justify-content: space-between; align-items: center; }
-        .job-item:last-child { border-bottom: none; }
+        .job-item { 
+            padding: 10px 0; 
+            border-bottom: 1px dashed #ddd; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            gap: 10px; /* Tạo khoảng cách an toàn giữa tên việc và trạng thái */
+        }
+        .job-name { 
+            font-weight: 600; 
+            color: #222; 
+            font-size: 14px; /* Giảm nhẹ 1px cho tên việc để không chèn ép nút trạng thái trên điện thoại */
+            line-height: 1.4;
+        }
+        .job-status { 
+            background: #E6F4EA; 
+            color: #137333; 
+            font-size: 11px; 
+            padding: 3px 8px; 
+            border-radius: 12px; 
+            font-weight: bold; 
+            white-space: nowrap; /* Ép buộc chữ "Đang tuyển" luôn nằm trên 1 dòng, không bao giờ nhảy dòng */
+            flex-shrink: 0; /* Không cho phép nút này bị bóp nghẹt */
+            animation: chomp_sang 1.5s infinite alternate; 
+        }
         .job-name { font-weight: 600; color: #222; }
         .job-status { background: #E6F4EA; color: #137333; font-size: 11px; padding: 2px 8px; border-radius: 12px; font-weight: bold; }
 
